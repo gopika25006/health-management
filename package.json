@@ -1,0 +1,22 @@
+{
+  "name": "village-health",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo root for Village Health Management System (convenience scripts)",
+  "scripts": {
+    "start": "npm --prefix village-health-frontend start",
+    "start:frontend": "npm --prefix village-health-frontend start",
+    "start:legacy-frontend": "npm --prefix frontend start",
+    "start:backend": "cd village-health-frontend/backend/village-health-form-backend && mvnw.cmd spring-boot:run",
+    "start:backend:node": "npm --prefix backend/node-backend run dev",
+    "dev": "concurrently \"npm run start:frontend\" \"npm run start:backend:node\" --names \"FRONTEND,BACKEND\" --prefix \"[{name}]\""
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
+
